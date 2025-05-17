@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tree Risk Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-shield-alt"></i> Tree Risk Admin Dashboard</h1>
+      <p>Manage tree risk reports and Ethephon treatments</p>
+    </header>
+
+    <!-- Toggle Buttons -->
+    <div class="toolbar toggle-toolbar">
+      <button id="showRiskDashboard" class="active"><i class="fas fa-exclamation-triangle"></i> Risky Tree Dashboard</button>
+      <button id="showEthephonTracker"><i class="fas fa-leaf"></i> Ethephon Treatment Tracker</button>
+    </div>
+
+    <!-- RISK DASHBOARD -->
+    <div id="riskDashboard">
+      <div class="toolbar">
+        <select id="riskFilter">
+          <option value="all">All Reports</option>
+          <option value="risky">Risky Only</option>
+          <option value="safe">Safe Only</option>
+        </select>
+        <button id="refreshBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+      </div>
+
+      <div id="reportsList" class="reports-list">
+        <div class="loading">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Loading reports...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETHEPHON TRACKER -->
+    <div id="ethephonTracker" style="display:none;">
+      <h2><i class="fas fa-leaf"></i> Mark Trees as Treated</h2>
+      <div class="ethephon-list reports-list" id="ethephonList">
+
+        <select id="ethephonSelect">
+          <option value="">Select a Tree</option>
+          <optgroup label="College Entrance">
+            <option value="CT001">CT001 - Entrance Tree 1</option>
+            <option value="CT002">CT002 - Entrance Tree 2</option>
+            <option value="CT003">CT003 - Entrance Tree 3</option>
+            <option value="CT004">CT004 - Entrance Tree 4</option>
+            <option value="CT005">CT005 - Entrance Tree 5</option>
+            <option value="CT006">CT006 - Entrance Tree 6</option>
+            <option value="CT007">CT007 - Entrance Tree 7</option>
+            <option value="CT008">CT008 - Entrance Tree 8</option>
+            <option value="CT009">CT009 - Entrance Tree 9</option>
+            <option value="CT010">CT010 - Entrance Tree 10</option>
+            <option value="CT011">CT011 - Entrance Tree 11</option>
+            <option value="CT012">CT012 - Entrance Tree 12</option>
+            <option value="CT013">CT013 - Entrance Tree 13</option>
+            <option value="CT014">CT014 - Entrance Tree 14</option>
+            <option value="CT015">CT015 - Entrance Tree 15</option>
+          </optgroup>
+          <optgroup label="Near College Canteen">
+            <option value="CT016">CT016 - Canteen Tree 1</option>
+            <option value="CT017">CT017 - Canteen Tree 2</option>
+            <option value="CT018">CT018 - Canteen Tree 3</option>
+            <option value="CT019">CT019 - Canteen Tree 4</option>
+            <option value="CT020">CT020 - Canteen Tree 5</option>
+            <option value="CT021">CT021 - Canteen Tree 6</option>
+            <option value="CT022">CT022 - Canteen Tree 7</option>
+            <option value="CT023">CT023 - Canteen Tree 8</option>
+            <option value="CT024">CT024 - Canteen Tree 9</option>
+            <option value="CT025">CT025 - Canteen Tree 10</option>
+            <option value="CT026">CT026 - Canteen Tree 11</option>
+            <option value="CT027">CT027 - Canteen Tree 12</option>
+          </optgroup>
+          <optgroup label="Near Design Building">
+            <option value="CT028">CT028 - Design Block Tree 1</option>
+            <option value="CT029">CT029 - Design Block Tree 2</option>
+            <option value="CT030">CT030 - Design Block Tree 3</option>
+            <option value="CT031">CT031 - Design Block Tree 4</option>
+            <option value="CT032">CT032 - Design Block Tree 5</option>
+            <option value="CT033">CT033 - Design Block Tree 6</option>
+            <option value="CT034">CT034 - Design Block Tree 7</option>
+            <option value="CT035">CT035 - Design Block Tree 8</option>
+            <option value="CT036">CT036 - Design Block Tree 9</option>
+            <option value="CT037">CT037 - Design Block Tree 10</option>
+          </optgroup>
+          <optgroup label="Front of A Wing">
+            <option value="CT038">CT038 - A Wing Tree 1</option>
+            <option value="CT039">CT039 - A Wing Tree 2</option>
+            <option value="CT040">CT040 - A Wing Tree 3</option>
+            <option value="CT041">CT041 - A Wing Tree 4</option>
+            <option value="CT042">CT042 - A Wing Tree 5</option>
+            <option value="CT043">CT043 - A Wing Tree 6</option>
+            <option value="CT044">CT044 - A Wing Tree 7</option>
+            <option value="CT045">CT045 - A Wing Tree 8</option>
+            <option value="CT046">CT046 - A Wing Tree 9</option>
+            <option value="CT047">CT047 - A Wing Tree 10</option>
+            <option value="CT048">CT048 - A Wing Tree 11</option>
+            <option value="CT049">CT049 - A Wing Tree 12</option>
+            <option value="CT050">CT050 - A Wing Tree 13</option>
+            <option value="CT051">CT051 - A Wing Tree 14</option>
+            <option value="CT052">CT052 - A Wing Tree 15</option>
+          </optgroup>
+          <optgroup label="Near H Wing">
+            <option value="CT053">CT053 - H Wing Tree 1</option>
+            <option value="CT054">CT054 - H Wing Tree 2</option>
+            <option value="CT055">CT055 - H Wing Tree 3</option>
+            <option value="CT056">CT056 - H Wing Tree 4</option>
+            <option value="CT057">CT057 - H Wing Tree 5</option>
+            <option value="CT058">CT058 - H Wing Tree 6</option>
+            <option value="CT059">CT059 - H Wing Tree 7</option>
+            <option value="CT060">CT060 - H Wing Tree 8</option>
+            <option value="CT061">CT061 - H Wing Tree 9</option>
+            <option value="CT062">CT062 - H Wing Tree 10</option>
+          </optgroup>
+        </select>
+        <button id="markTreatedBtn"><i class="fas fa-check-circle"></i> Mark as Treated</button>
+      </div>
+      <div id="treatedList" class="reports-list" style="margin-top: 2rem;"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js" type="module"></script>
+</body>
+</html>

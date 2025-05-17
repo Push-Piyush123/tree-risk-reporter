@@ -1,0 +1,158 @@
+/* ===== style.css for index.html ===== */
+:root {
+  --primary: #571ca3;
+  --primary-dark: #1b5e20;
+  --accent: #00a5e5;
+  --danger: #c62828;
+  --safe: #4caf50;
+  --light: #f7f9fb;
+  --text: #333;
+  --text-light: #666;
+  --card-bg: #fff;
+  --border-radius: 10px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+.app-header {
+  text-align: center;
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  padding: 2rem;
+  color: white;
+  height: 100px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo i {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.app-main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.floating-label select,
+.floating-label input[type="file"] {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.floating-label label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: white;
+  padding: 0 5px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.submit-btn {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+}
+
+.result-card {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.risk-badge.safe {
+  background: rgba(76, 175, 80, 0.2);
+  color: var(--safe);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.risk-badge.risky {
+  background: rgba(198, 40, 40, 0.1);
+  color: var(--danger);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.image-preview img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.confidence-meter {
+  margin-top: 1rem;
+}
+
+.meter-track {
+  background: #ddd;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: linear-gradient(to right, red, orange, green);
+  width: 0;
+  transition: width 1s ease-out;
+}
+.app-footer {
+  background-color: #1a1a1a; /* Charcoal */
+  color: #f0f0f0;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-top: 4px solid #ff6b35; /* Bright orange highlight */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.app-footer h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

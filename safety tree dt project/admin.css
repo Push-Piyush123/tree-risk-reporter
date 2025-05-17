@@ -1,0 +1,186 @@
+/* ===== admin.css for Admin Dashboard ===== */
+:root {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --danger: #c62828;
+  --safe: #4caf50;
+  --light: #f7f9fb;
+  --text: #333;
+  --text-light: #666;
+  --card-bg: #ffffff;
+  --border-radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid black  ;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+select, button {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+.reports-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.report-card {
+  background: var(--card-bg);
+  border-left: 6px solid #ccc;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+}
+
+.report-card.risky {
+  border-left-color: var(--danger);
+  box-shadow: 0 0 10px rgba(198, 40, 40, 0.1);
+}
+
+.report-card.safe {
+  border-left-color: var(--safe);
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.1);
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.report-details p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.report-details strong {
+  color: var(--primary);
+}
+
+.report-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  box-shadow: var(--shadow);
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-light);
+  padding: 2rem;
+  grid-column: 1 / -1;
+}
+
+#refreshBtn {
+    /* Basic styling */
+    padding: 10px 20px;
+    background-color: rgb(29, 32, 82);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    
+    /* Smooth transitions */
+    transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+    
+    /* Subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* hhhhhhh */
+
+#riskFilter {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color:  rgb(29, 32, 82);
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 10px 40px 10px 15px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23667185' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.report-image {
+  width: 100%; /* Make it fill the container's width */
+  height: 500px; /* Custom height */
+  overflow: hidden; /* Hide overflow if the image is too large */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Optional: Add a background color for better visibility */
+  border-radius: 6px; /* Optional: Add rounded corners */
+}
+
+.report-image img {
+  width: 100%; /* Makes the image width fit the box */
+  height: 100%; /* Makes the image height fit the box */
+  object-fit: cover; /* Ensures the image covers the box without distorting it */
+}
